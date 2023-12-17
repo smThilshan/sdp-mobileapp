@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sdp_mobileapp/screens/login_screen.dart';
 import 'package:sdp_mobileapp/widgets/my_textbox_widget.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -17,7 +18,7 @@ class RegisterScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 50.0),
+              const SizedBox(height: 50.0),
               const Text(
                 'Register here!', // Decorative text
                 style: TextStyle(
@@ -32,7 +33,7 @@ class RegisterScreen extends StatelessWidget {
               MyTextBoxWidget(
                 text: "Username",
                 controller: _username,
-                icon: Icon(Icons.person),
+                icon: const Icon(Icons.person),
               ),
 
               const SizedBox(height: 10.0),
@@ -40,47 +41,43 @@ class RegisterScreen extends StatelessWidget {
               MyTextBoxWidget(
                 text: "NIC",
                 controller: _nic,
-                icon: Icon(Icons.numbers),
+                icon: const Icon(Icons.numbers),
               ),
               const SizedBox(height: 10.0),
 
               MyTextBoxWidget(
                 text: "Mobile No",
                 controller: _nic,
-                icon: Icon(Icons.phone),
+                icon: const Icon(Icons.phone),
               ),
               const SizedBox(height: 10.0),
 
               MyTextBoxWidget(
                 text: "Password",
                 controller: _nic,
-                icon: Icon(Icons.password_outlined),
+                icon: const Icon(Icons.password_outlined),
               ),
               const SizedBox(height: 10.0),
 
               MyTextBoxWidget(
                 text: "Confirm Password",
                 controller: _nic,
-                icon: Icon(Icons.password_outlined),
+                icon: const Icon(Icons.password_outlined),
               ),
 
-              SizedBox(height: 25.0),
+              const SizedBox(height: 25.0),
 
-              // Login Button
               ElevatedButton(
                 onPressed: () {
-                  // Add your login logic here
-                  print('Login button pressed');
+                  Navigator.pushNamed(context, LoginScreen.routeName);
                 },
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.blue, // Set the text color to white
-                  padding: EdgeInsets.symmetric(
-                      vertical: 16.0), // Adjust the vertical padding as needed
-                  minimumSize: Size(double.infinity,
-                      50.0), // Make the button stretch across the width
+                  backgroundColor: Colors.blue,
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  minimumSize: const Size(double.infinity, 50.0),
                 ),
-                child: Text(
+                child: const Text(
                   'Sign Up',
                   style: TextStyle(
                     fontSize: 15.0,
@@ -88,15 +85,15 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
 
               // Register Link
               TextButton(
                 onPressed: () {
-                  // Add your register logic here
-                  print('Register button pressed');
+                  // print('Register button pressed');
+                  Navigator.pushNamed(context, LoginScreen.routeName);
                 },
-                child: Text('Already I hava an account'),
+                child: const Text('Already I hava an account'),
               ),
             ],
           ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MyDropDownWidget extends StatefulWidget {
-  const MyDropDownWidget({super.key});
+  final void Function(String?) onValueChanged;
+
+  const MyDropDownWidget({required this.onValueChanged, Key? key})
+      : super(key: key);
 
   @override
   State<MyDropDownWidget> createState() => _MyDropDownWidgetState();
@@ -17,16 +20,16 @@ class _MyDropDownWidgetState extends State<MyDropDownWidget> {
     return Form(
       key: _formKey,
       child: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Dropdown
             DropdownButtonFormField<String>(
               value: selectedOption,
               onChanged: (value) {
                 setState(() {
                   selectedOption = value;
+                  widget.onValueChanged(value);
                 });
               },
               items: options.map((option) {
@@ -49,9 +52,7 @@ class _MyDropDownWidgetState extends State<MyDropDownWidget> {
                     vertical: 16.0, horizontal: 12.0),
               ),
             ),
-            SizedBox(height: 10.0),
-
-            // Other Text Field
+            const SizedBox(height: 10.0),
           ],
         ),
       ),

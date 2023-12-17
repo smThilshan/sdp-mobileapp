@@ -15,7 +15,7 @@ class BigBtnWidget extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),

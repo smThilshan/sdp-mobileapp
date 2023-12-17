@@ -9,12 +9,12 @@ class DrawerWidget extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
             child: Text(
-              'Drawer Header',
+              'User: Jonh wick',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
@@ -22,13 +22,13 @@ class DrawerWidget extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text('Item 1'),
+            title: const Text('My profile'),
             onTap: () {
               // Handle item 1 tap
             },
           ),
           ListTile(
-            title: Text('Item 2'),
+            title: const Text('Settings'),
             onTap: () {
               // Handle item 2 tap
             },

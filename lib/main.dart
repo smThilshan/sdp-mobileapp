@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sdp_mobileapp/providers/complaint_provider.dart';
+import 'package:sdp_mobileapp/screens/accepted_complaint_screen.dart';
 import 'package:sdp_mobileapp/screens/add_complaint_screen.dart';
 import 'package:sdp_mobileapp/screens/complaint_details_screen.dart';
 import 'package:sdp_mobileapp/screens/complaint_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: const HomeScreen(),
+        home: const LoginScreen(),
         routes: {
           HomeScreen.routeName: (context) => const HomeScreen(),
           LoginScreen.routeName: (context) => const LoginScreen(),
@@ -37,7 +38,9 @@ class MyApp extends StatelessWidget {
           ComplaintScreen.routeName: (context) => const ComplaintScreen(),
           ComplaintDetailsScreen.routeName: (context) =>
               const ComplaintDetailsScreen(),
-          AddComplaintScreen.routeName: (context) => const AddComplaintScreen()
+          AddComplaintScreen.routeName: (context) => const AddComplaintScreen(),
+          AcceptedComplaintScreen.routeName: (context) =>
+              const AcceptedComplaintScreen(),
         },
       ),
     );

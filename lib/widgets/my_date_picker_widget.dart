@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class MyDatePicker extends StatefulWidget {
-  const MyDatePicker({Key? key}) : super(key: key);
+  final void Function(DateTime?) onDateTimeSelected;
+
+  const MyDatePicker({required this.onDateTimeSelected, Key? key})
+      : super(key: key);
 
   @override
   State<MyDatePicker> createState() => _MyDatePickerState();
@@ -24,6 +27,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
     if (picked != null && picked != selectedDate) {
       setState(() {
         selectedDate = picked;
+        widget.onDateTimeSelected(selectedDate);
       });
     }
   }
@@ -37,6 +41,12 @@ class _MyDatePickerState extends State<MyDatePicker> {
     if (picked != null && picked != selectedTime) {
       setState(() {
         selectedTime = picked;
+        widget.onDateTimeSelected(DateTime(
+            selectedDate!.year,
+            selectedDate!.month,
+            selectedDate!.day,
+            picked.hour,
+            picked.minute));
       });
     }
   }
@@ -46,7 +56,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
     return Form(
       key: _formKey,
       child: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -67,7 +77,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
                     ? 'Select Date and Time'
                     : '',
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.calendar_today),
+                  icon: const Icon(Icons.calendar_today),
                   onPressed: () async {
                     await _selectDate(context);
                     await _selectTime(context);
@@ -87,7 +97,7 @@ class _MyDatePickerState extends State<MyDatePicker> {
                 ),
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
           ],
         ),
       ),

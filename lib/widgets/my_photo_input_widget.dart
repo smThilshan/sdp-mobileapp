@@ -43,16 +43,16 @@ class _MyPhotoInputButtonState extends State<MyPhotoInputButton> {
       children: [
         ElevatedButton.icon(
           onPressed: () => _pickImages(context),
-          icon: Icon(Icons.camera),
-          label: Text('Add Photo'),
+          icon: const Icon(Icons.camera),
+          label: const Text('Add Photo'),
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
-            primary: Colors.blue,
+            backgroundColor: Colors.blue,
           ),
         ),
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         if (selectedImages != null && selectedImages!.isNotEmpty)
           Wrap(
             spacing: 8.0,
@@ -72,7 +72,7 @@ class _MyPhotoInputButtonState extends State<MyPhotoInputButton> {
                           fit: BoxFit.cover,
                         ),
                         IconButton(
-                          icon: Icon(Icons.close),
+                          icon: const Icon(Icons.close),
                           onPressed: () {
                             setState(() {
                               selectedImages!.removeAt(entry.key);

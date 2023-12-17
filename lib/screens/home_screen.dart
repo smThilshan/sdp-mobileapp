@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sdp_mobileapp/screens/accepted_complaint_screen.dart';
 import 'package:sdp_mobileapp/screens/add_complaint_screen.dart';
 import 'package:sdp_mobileapp/screens/complaint_screen.dart';
 import 'package:sdp_mobileapp/screens/profile_screen.dart';
@@ -37,7 +38,7 @@ class HomeScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.lightBlue,
         centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Column(
         children: [
@@ -83,7 +84,7 @@ class HomeScreen extends StatelessWidget {
                   // Box 2
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30.0,
               ),
 
@@ -91,7 +92,11 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   BigBtnWidget(
-                      btnText: "Accepted Complaints", onPressed: () {}),
+                      btnText: "Accepted Complaints",
+                      onPressed: () {
+                        Navigator.pushNamed(
+                            context, AcceptedComplaintScreen.routeName);
+                      }),
                   BigBtnWidget(
                     btnText: "My Profile",
                     onPressed: () {

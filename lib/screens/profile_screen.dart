@@ -19,15 +19,15 @@ class ProfileScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.lightBlue,
         centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 30.0),
+              SizedBox(height: 30.0),
               // Username Input
               MyTextBoxWidget(
                 text: "Username",
@@ -35,21 +35,21 @@ class ProfileScreen extends StatelessWidget {
                 icon: Icon(Icons.person),
               ),
 
-              const SizedBox(height: 10.0),
+              SizedBox(height: 10.0),
 
               MyTextBoxWidget(
                 text: "NIC",
                 // controller: _nic,
                 icon: Icon(Icons.numbers),
               ),
-              const SizedBox(height: 10.0),
+              SizedBox(height: 10.0),
 
               MyTextBoxWidget(
                 text: "Mobile No",
                 // controller: _nic,
                 icon: Icon(Icons.phone),
               ),
-              const SizedBox(height: 10.0),
+              SizedBox(height: 10.0),
 
               MyTextBoxWidget(
                 text: "Password",
